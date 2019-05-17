@@ -1,0 +1,34 @@
+@import "about";
+@import "home";
+@import "projects";
+@import "variables";
+
+html {
+  background-color: $background_light;
+  font-family: $base_font;
+}
+
+a {
+  text-decoration: none;
+
+  &:active, &:visited {
+    color: $text_base;
+  }
+
+  &:hover {
+    color: $action_primary;
+  }
+}
+
+header {
+  color: $text_light;
+  background-color: $background_dark;
+  width: 100%;
+  display: flex;
+  height: $header_height;
+
+  .nav-item {
+    color: $text_light;
+    padding: 12px;
+  }
+}
