@@ -3,12 +3,19 @@
 @import "projects";
 @import "variables";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   background-color: $background_light;
   font-family: $base_font;
 }
 
 a {
+  color: $text_base;
   text-decoration: none;
 
   &:active, &:visited {
@@ -21,14 +28,46 @@ a {
 }
 
 header {
-  color: $text_light;
   background-color: $background_dark;
+  color: $text_light;
+  height: auto;
   width: 100%;
-  display: flex;
-  height: $header_height;
 
-  .nav-item {
-    color: $text_light;
+  nav {
+    display: flex;
+    flex-direction: row;
     padding: 12px;
+    width: auto;
+
+    .nav-item {
+      color: $text_light;
+      padding: 12px;
+
+      &:hover {
+        color: $action_primary;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $background_dark;
+  color: $text_light;
+  display: flex;
+  height: auto;
+  padding: 48px;
+  width: 100%;
+
+  .made-by {
+    margin: auto;
+    width: auto;
+
+    &, & > a {
+      color: $text_light;
+    }
+
+    a:hover {
+      color: $action_primary;
+    }
   }
 }
