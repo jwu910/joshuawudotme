@@ -14,9 +14,17 @@ html {
   font-family: $base_font;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 8px;
+}
+
 a {
   color: $text_base;
-  text-decoration: none;
 
   &:active, &:visited {
     color: $text_base;
@@ -42,6 +50,7 @@ header {
     .nav-item {
       color: $text_light;
       padding: 12px;
+      text-decoration: none;
 
       &:hover {
         color: $action_primary;
