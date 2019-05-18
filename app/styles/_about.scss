@@ -1,0 +1,33 @@
+#about {
+  padding: 16px;
+
+  img {
+    width: 100%;
+    max-width: 640px;
+    max-height: 360px;
+  }
+
+  .bio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .description {
+    margin-left: 16px;
+    line-height: 1.5em;
+
+    p {
+      margin-bottom: 8px;
+    }
+  }
+
+  @media only screen and (min-width: 670px) {
+    img {
+      width: 50vw;
+    }
+
+    .bio {
+      flex-direction: row;
+    }
+  }
+}
