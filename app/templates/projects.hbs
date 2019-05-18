@@ -1,1 +1,16 @@
-{{outlet}}
+<div id="projects">
+  {{#each model as |project|}}
+    <ProjectCard
+      @description={{project.description}}
+      @image={{project.image}}
+      @source={{project.source}}
+      @title={{project.title}}
+      @website={{project.website}}
+    />
+  {{else}}
+    <h5>
+      Sorry, there seems to be an error loading projects. Check out my <a alt="Github link" href="https://github.com/jwu910">Github</a>
+    </h5>
+  {{/each}}
+  {{outlet}}
+</div>

@@ -5,3 +5,8 @@ $base_font: "Lato" sans-serif;
 $header_height: 60px;
 $text_base: #303633;
 $text_light: #FEFFFB;
+
+$shadow_color: transparentize($background_dark, 0.6);
+
+$shadow: 0 5px 9px 0 $shadow_color, 0 9px 1px -4px $shadow_color;
+$shadow_raised: 0 4px 12px 0 $shadow_color, 0 3px 8px 0 $shadow_color;
