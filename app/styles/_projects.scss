@@ -1,17 +1,40 @@
 @import "variables";
 
-#projects {
-  display: flex;
-  width: 100%;
+.projects {
+  padding: 12px;
+
+  & > .title {
+    text-align: center;
+  }
 
   .project-card {
-    box-shadow: $shadow;
-    margin: 12px;
-    padding: 24px;
-    width: auto;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    padding: 16px;
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      margin-bottom: 8px;
+      width: 100%;
+
+      .tag {
+        background-color: transparentize($background_dark, 0.9);
+        border: solid 1px transparentize($background_dark, 0.9);
+        border-radius: 8px;
+        color: transparentize($background_dark, 0.5);
+        font-size: 0.8rem;
+        margin: 4px;
+        padding: 4px 8px;
+        width: auto;
+      }
+    }
 
     .project-header {
       display: flex;
+      flex-direction: row;
+      width: auto;
 
       .title {
         margin-left: 8px;
@@ -25,6 +48,13 @@
 
     .description {
       margin-bottom: 12px;
+    }
+  }
+
+  @media only screen and (min-width: 670px) {
+    .project-card {
+      margin-top: 48px;
+      margin-bottom: 48px;
     }
   }
 }
