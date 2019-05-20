@@ -69,6 +69,17 @@
       }
     }
 
+    .icon {
+      font-size: 1.5em;
+      color: transparentize($background_dark, 0.7);
+      text-decoration: none;
+      margin-right: 12px;
+
+      &:hover {
+        color: $action_primary;
+      }
+    }
+
     .description {
       margin-bottom: 12px;
     }

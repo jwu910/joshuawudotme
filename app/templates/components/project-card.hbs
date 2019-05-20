@@ -16,10 +16,14 @@
   <p class="description">{{this.description}}</p>
 
   {{#if this.source}}
-    <a alt="Source Code Link" href={{this.source}}>Source</a>
+    <a alt="Source Code Link" class="icon" href={{this.source}}>
+      {{fa-icon "github-alt" prefix="fab"}}
+    </a>
   {{/if}}
 
   {{#if this.website}}
-    <a alt="Website Link" href={{this.website}}>Website</a>
+    <a alt="Website Link" class="icon" href={{this.website}}>
+      {{fa-icon "globe"}}
+    </a>
   {{/if}}
 </div>
