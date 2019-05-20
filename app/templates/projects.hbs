@@ -1,7 +1,11 @@
 <section class="projects">
   <AboutCard />
 
-  <h2 class="title">Projects</h2>
+  <h2 class="title">
+    Projects
+  </h2>
+
+  <div class="separator-h" />
 
   {{#each model as |project|}}
     <ProjectCard
@@ -12,6 +16,8 @@
       @title={{project.title}}
       @website={{project.website}}
     />
+
+    <div class="separator-h" />
   {{else}}
     <h5>
       Sorry, there seems to be an error loading projects. Check out my <a alt="Github link" href="https://github.com/jwu910">Github</a>
