@@ -76,6 +76,7 @@ footer {
   background-color: $background_dark;
   color: $text_light;
   display: flex;
+  flex-direction: column;
   height: auto;
   padding: 48px;
   width: 100%;

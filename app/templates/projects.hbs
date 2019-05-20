@@ -1,5 +1,14 @@
 <div class="projects">
+  <div class="about">
+    <div class="profile">
+      <img alt="Profile Picture" src="https://placekitten.com/360/360" />
+    </div>
+
+    <AboutCard />
+  </div>
+
   <h2 class="title">Projects</h2>
+
   {{#each model as |project|}}
     <ProjectCard
       @description={{project.description}}
