@@ -1,8 +1,14 @@
 <div class="project-card">
   <div class="project-header">
-    <img alt="Project image" src={{this.image}} />
+    <img alt="Icon" src={{this.image}} />
 
     <h3 class="title">{{this.title}}</h3>
+  </div>
+
+  <div class="tags">
+    {{#each this.tags as |tag|}}
+      <div class="tag">{{tag}}</div>
+    {{/each}}
   </div>
 
   <p class="description">{{this.description}}</p>

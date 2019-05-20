@@ -1,9 +1,11 @@
-<div id="projects">
+<div class="projects">
+  <h2 class="title">Projects</h2>
   {{#each model as |project|}}
     <ProjectCard
       @description={{project.description}}
       @image={{project.image}}
       @source={{project.source}}
+      @tags={{project.tags}}
       @title={{project.title}}
       @website={{project.website}}
     />

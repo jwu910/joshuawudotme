@@ -41,6 +41,13 @@ a {
   }
 }
 
+ol,
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background-color: $background_dark;
   color: $text_light;
