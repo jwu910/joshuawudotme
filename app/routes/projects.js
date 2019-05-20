@@ -32,6 +32,13 @@ export default Route.extend({
         source: "https://github.com/the-after-hours/slng-node",
         tags: ['Node.js', 'API', 'CLI'],
         title: "Slng",
+      },
+      {
+        description: "This portfolio is a work in progress reconstruction of http://joshuawu.me in Ember.js",
+        source: "https://www.github.com/jwu910/joshuawudotme",
+        tags: ['Ember.js', 'Javascript', 'Handlebars', 'SPA'],
+        title: "Portfolio Site",
+        website: "https://joshuawudotme.herokuapp.com",
       }
     ]
   }
