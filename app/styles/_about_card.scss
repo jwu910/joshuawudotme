@@ -1,5 +1,8 @@
+@import "variables";
+
 .about-card {
   padding: 8px;
+  margin: 12px;
 
   .description {
     padding: 8px;
@@ -7,10 +10,12 @@
 
   .profile-img {
     margin: auto;
+    margin-bottom: 24px;
     border-radius: 50%;
     overflow: hidden;
-    width: 64px;
-    height: 64px;
+    width: 124px;
+    height: 124px;
+    box-shadow: $shadow_angle;
 
     img {
       display: inline-block;
@@ -25,6 +30,11 @@
 
     .description {
       padding: 24px 64px;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
     }
   }
 }
