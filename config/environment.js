@@ -27,9 +27,9 @@ module.exports = function(environment) {
         'free-brands-svg-icons': [
           'github-alt'
         ],
-        //'free-solid-svg-icons': [
-        //  'globe'
-        //]
+        'free-solid-svg-icons': [
+          'globe'
+        ]
       }
     }
   };
