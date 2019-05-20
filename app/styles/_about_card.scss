@@ -1,0 +1,40 @@
+@import "variables";
+
+.about-card {
+  padding: 8px;
+  margin: 12px;
+
+  .description {
+    padding: 8px;
+  }
+
+  .profile-img {
+    margin: auto;
+    margin-bottom: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 124px;
+    height: 124px;
+    box-shadow: $shadow_angle;
+
+    img {
+      display: inline-block;
+      height: 100%;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 670px) {
+    padding: 48px;
+
+    .description {
+      padding: 24px 64px;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+    }
+  }
+}
