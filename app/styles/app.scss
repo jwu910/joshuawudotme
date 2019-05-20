@@ -1,5 +1,7 @@
+@import "contact";
 @import "home";
 @import "projects";
+@import "separator";
 @import "variables";
 
 * {
@@ -96,4 +98,9 @@ footer {
 
 section {
   margin-bottom: 48px;
+
+  .title {
+    display: flex;
+    justify-content: center;
+  }
 }

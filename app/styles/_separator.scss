@@ -1,0 +1,12 @@
+@import "variables";
+
+.separator-h {
+  background-color: transparentize($background_dark, 0.7);
+  height: 4px;
+  margin: auto;
+  width: 80px;
+
+  @media only screen and (min-width: 670px) {
+    width: 200px;
+  }
+}
