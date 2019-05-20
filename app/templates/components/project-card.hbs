@@ -1,6 +1,8 @@
 <div class="project-card">
   <div class="project-header">
-    <img alt="Icon" src={{this.image}} />
+    {{#if this.image}}
+      <img alt="Icon" src={{this.image}} />
+    {{/if}}
 
     <h3 class="title">{{this.title}}</h3>
   </div>
@@ -13,7 +15,11 @@
 
   <p class="description">{{this.description}}</p>
 
-  <a alt="Source Code Link" href={{this.source}}>Source</a>
+  {{#if this.source}}
+    <a alt="Source Code Link" href={{this.source}}>Source</a>
+  {{/if}}
 
-  <a alt="Website Link" href={{this.website}}>Website</a>
+  {{#if this.website}}
+    <a alt="Website Link" href={{this.website}}>Website</a>
+  {{/if}}
 </div>
