@@ -12,11 +12,11 @@ export default Route.extend({
         website: "http://checkit.club",
       },
       {
-        description: "An ongoing project with a goal to connect people from around the world--from all different walks of life. We all have stories of struggle, loss, failure, but also stories of gain, love, and success. Our stories are often private and we feel they are unique to our own lives. With the yOUR Story Project, we can see that your story is OUR story.",
+        description: "An ongoing project with a goal to connect people from around the world--from all different walks of life. We all have stories of struggle, loss, failure, but also stories of gain, love, and success. Our stories are often private and we feel they are unique to our own lives.",
         image: "",
         source: "https://github.com/yourstoryproject/yourstoryproject",
         tags: ["Python", "Flask", "Ember.js", "Heroku"],
-        title: "yOUR Story Project [IN PROGRESS]",
+        title: "Your Story Project [IN PROGRESS]",
         website: ""
       },
       {
