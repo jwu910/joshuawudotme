@@ -34,7 +34,7 @@ export default Route.extend({
         title: "Slng",
       },
       {
-        description: "This portfolio is a work in progress reconstruction of http://joshuawu.me in Ember.js",
+        description: "Source code for this portfolio.",
         source: "https://www.github.com/jwu910/joshuawudotme",
         tags: ['Ember.js', 'Javascript', 'Handlebars', 'SPA'],
         title: "Portfolio Site",
