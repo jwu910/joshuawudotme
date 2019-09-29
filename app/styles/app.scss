@@ -116,3 +116,9 @@ section {
     justify-content: center;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  footer {
+    position: relative;
+  }
+}
