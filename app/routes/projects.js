@@ -13,11 +13,11 @@ export default Route.extend({
       },
       {
         description: "An ongoing project with a goal to connect people from around the world--from all different walks of life. We all have stories of struggle, loss, failure, but also stories of gain, love, and success. A community project to explore our intersecting identities.",
-        image: "",
+        image: "https://firebasestorage.googleapis.com/v0/b/yourstoryproject-f405e.appspot.com/o/ysp-logo-1000x1000-white-bg.png?alt=media&token=47969469-719c-49f5-96ec-433863dcbf64",
         source: "https://github.com/yourstoryproject/yourstory-client",
-        tags: ["Firebase", "React.js", "Styled Components", "SPA"],
+        tags: ["Firebase", "React.js", "Styled Components", "SPA", "Typescript"],
         title: "Your Story Project [IN PROGRESS]",
-        website: ""
+        website: "https://yourstoryproject.org"
       },
       {
         description: "A CLI Python script that automated the process of superimposing an overlay image on images being placed in a watch folder. This work was done for free for California State University, Fullerton's Masters of Science in Higher Education program. The script has been used to operate a photo booth at their Maywood education fair since 2017.",
