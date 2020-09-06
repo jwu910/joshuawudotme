@@ -19,6 +19,7 @@ export default {
 .profile {
   border-radius: 50%;
   height: 12rem;
+  padding: 2rem;
   width: 12rem;
 }
 </style>
