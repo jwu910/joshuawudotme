@@ -18,6 +18,8 @@ export default {
 
   @media (min-width: 768px) {
     max-width: 768px;
+    margin: auto;
+    margin-top: 2rem;
   }
 }
 
