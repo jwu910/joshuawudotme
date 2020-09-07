@@ -41,11 +41,10 @@ export default {
 @import "@/styles/variables";
 
 footer {
-  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: fixed;
+  margin-top: auto;
   width: 100%;
 }
 

@@ -14,14 +14,16 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  max-width: 60%;
-  margin: auto;
+  margin: 2rem 0;
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
 }
 
 .profile {
   border-radius: 50%;
   height: 12rem;
-  padding: 2rem;
   width: 12rem;
 }
 </style>
