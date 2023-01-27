@@ -1,20 +1,59 @@
-import React from "react";
+import { Stack } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import { Box } from "@mui/system";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
-// import github from "./assets/github.png";
-// import linkedin from "./assets/linkedin.png";
-import profile from "./assets/profile.jpg";
-import logo from "./assets/wu_logo.png";
+import zeebo from "./assets/zeebo.png";
+import Navbar from "./components/Navbar";
+
+const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));
+const HomePage = React.lazy(() => import("./pages/HomePage"));
+// Requirements:
+/*
+- List of projects with github pages
+    - dynamic links based off github API
+*/
 
 function App() {
+  // create theme
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <section className="App-content">
-        <img src={profile} className="App-profile" alt="profile" />
-      </section>
-    </div>
+    <Stack sx={{ m: "auto" }}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<CircularProgress />}>
+                <HomePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <Suspense fallback={<CircularProgress />}>
+                <ProjectsPage />
+              </Suspense>
+            }
+          />
+        </Routes>
+        <Box
+          alt="Josh's cat zeebo"
+          component="img"
+          src={zeebo}
+          sx={{
+            bottom: 0,
+            height: "100px",
+            left: 0,
+            position: "fixed",
+            width: "100px",
+          }}
+        ></Box>
+      </Router>
+    </Stack>
   );
 }
 
