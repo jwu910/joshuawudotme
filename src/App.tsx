@@ -5,6 +5,7 @@ import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import zeebo from "./assets/zeebo.png";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));
@@ -40,10 +41,12 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
         <Box
           alt="Josh's cat zeebo"
           component="img"
           src={zeebo}
+          title="Zeebo"
           sx={{
             bottom: 0,
             height: "100px",
