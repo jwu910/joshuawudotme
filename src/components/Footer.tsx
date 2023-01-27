@@ -11,7 +11,7 @@ const Footer = () => {
       }}
     >
       <Stack sx={{ width: "100%" }} spacing={2}>
-        <Typography sx={{ margin: "auto" }} variant="body1">
+        <Typography sx={{ m: "auto" }} variant="body1">
           Built with 😻 | Supported by Zeebo and Zuko | &copy; 2016 -{" "}
           {new Date().getFullYear()}
         </Typography>
