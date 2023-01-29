@@ -1,10 +1,8 @@
 import { Stack } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import { Box } from "@mui/system";
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
-import zeebo from "./assets/zeebo.png";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
@@ -20,8 +18,12 @@ function App() {
   // create theme
 
   return (
-    <Stack sx={{ m: "auto" }}>
-      <Router>
+    <Router>
+      <Stack
+        sx={{ m: "auto", height: "100vh" }}
+        spacing={2}
+        justifyContent="space-between"
+      >
         <Navbar />
         <Routes>
           <Route
@@ -42,21 +44,8 @@ function App() {
           />
         </Routes>
         <Footer />
-        <Box
-          alt="Josh's cat zeebo"
-          component="img"
-          src={zeebo}
-          title="Zeebo"
-          sx={{
-            bottom: 0,
-            height: "100px",
-            left: 0,
-            position: "fixed",
-            width: "100px",
-          }}
-        ></Box>
-      </Router>
-    </Stack>
+      </Stack>
+    </Router>
   );
 }
 
