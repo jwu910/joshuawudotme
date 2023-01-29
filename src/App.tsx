@@ -15,7 +15,7 @@ const HomePage = React.lazy(() => import("./pages/HomePage"));
 */
 
 function App() {
-  // create theme
+  // TODO: create theme
 
   return (
     <Router>
