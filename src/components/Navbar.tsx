@@ -1,8 +1,8 @@
-import { Box, Link, Stack, Tab, Tabs } from "@mui/material";
+import { Box, Link, Stack } from "@mui/material";
 import githubLogo from "../assets/github.png";
 import linkedInLogo from "../assets/linkedin.png";
 import logo from "../assets/wu_logo.png";
-import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
+// import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   // const useRouteMatch = (patterns: readonly string[]) => {
