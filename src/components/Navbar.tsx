@@ -1,9 +1,14 @@
-import { Box, Link, Stack, useTheme } from "@mui/material";
+import { Box, IconButton, Link, Stack, useTheme } from "@mui/material";
 import logo from "../assets/wu_logo.png";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 // import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
+import { ThemeContext } from "../context/theme";
+import { useContext } from "react";
 
 const Navbar = () => {
   const theme = useTheme();
+  const { toggleColorMode } = useContext(ThemeContext);
   // const useRouteMatch = (patterns: readonly string[]) => {
   //   const { pathname } = useLocation();
 
@@ -20,6 +25,12 @@ const Navbar = () => {
 
   // const routeMatch = useRouteMatch(["/projects", "/contact", "/"]);
   // const currentTab = routeMatch?.pattern?.path;
+  const iconStyles = {
+    height: "30px",
+    width: "30px",
+    m: 0,
+    display: "flex",
+  };
 
   return (
     <Box
@@ -58,6 +69,19 @@ const Navbar = () => {
         sx={{ ml: "auto", verticalAlign: "middle", display: "flex" }}
         spacing={2}
       >
+        <IconButton
+          aria-label="Toggle theme"
+          color="primary"
+          onClick={toggleColorMode}
+          sx={{ ...iconStyles }}
+          title="Toggle theme"
+        >
+          {theme.palette.mode === "dark" ? (
+            <Brightness7Icon />
+          ) : (
+            <Brightness4Icon />
+          )}
+        </IconButton>
         <Link
           aria-label="Link to Josh's LinkedIn profile"
           href="https://linkedin.com/in/wujoshua"
@@ -65,11 +89,7 @@ const Navbar = () => {
           target="_blank"
           title="LinkedIn"
           sx={{
-            height: "30px",
-            width: "30px",
-            m: 0,
-            display: "flex",
-            verticalAlign: "middle",
+            ...iconStyles,
           }}
         >
           <svg
@@ -88,11 +108,7 @@ const Navbar = () => {
           target="_blank"
           title="Github"
           sx={{
-            height: "30px",
-            width: "30px",
-            m: 0,
-            display: "flex",
-            verticalAlign: "middle",
+            ...iconStyles,
           }}
         >
           <svg
