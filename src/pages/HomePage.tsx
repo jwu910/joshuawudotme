@@ -11,7 +11,7 @@ const HomePage = () => {
           src={profile}
           sx={{ height: 200, width: 200, borderRadius: "50%", m: "auto" }}
         />
-        <Typography variant="h3" sx={{ textAlign: "center" }}>
+        <Typography variant="h1" sx={{ textAlign: "center" }}>
           Hello Nerds, I'm Josh
         </Typography>
       </Stack>

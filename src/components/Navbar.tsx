@@ -43,7 +43,7 @@ const Navbar = () => {
         top: 0,
         position: "fixed",
         width: "100vw",
-        backgroundColor: theme.palette.grey[600],
+        backgroundColor: theme.palette.secondary.main,
       }}
     >
       <img src={logo} height="40" alt="logo" />
