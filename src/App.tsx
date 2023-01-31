@@ -19,36 +19,43 @@ function App() {
     <>
       <JWThemeProvider>
         <CssBaseline enableColorScheme />
-        <Router>
-          <Navbar />
-          <Container maxWidth="md">
-            <Stack
-              sx={{ pt: 12, height: "calc(100vh - 56px)" }}
-              spacing={2}
-              justifyContent="space-between"
-            >
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <Suspense fallback={<CircularProgress />}>
-                      <HomePage />
-                    </Suspense>
-                  }
-                />
-                <Route
-                  path="/projects"
-                  element={
-                    <Suspense fallback={<CircularProgress />}>
-                      <ProjectsPage />
-                    </Suspense>
-                  }
-                />
-              </Routes>
-            </Stack>
-            <Footer />
-          </Container>
-        </Router>
+        <Navbar />
+        <Container
+          aria-label="main content"
+          disableGutters
+          maxWidth="md"
+          sx={{ height: "100%" }}
+        >
+          <Router>
+            <Container disableGutters sx={{ height: "100%" }}>
+              <Stack
+                sx={{ height: "100%", display: "flex" }}
+                spacing={2}
+                justifyContent="space-between"
+              >
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <Suspense fallback={<CircularProgress />}>
+                        <HomePage />
+                      </Suspense>
+                    }
+                  />
+                  <Route
+                    path="/projects"
+                    element={
+                      <Suspense fallback={<CircularProgress />}>
+                        <ProjectsPage />
+                      </Suspense>
+                    }
+                  />
+                </Routes>
+                <Footer />
+              </Stack>
+            </Container>
+          </Router>
+        </Container>
       </JWThemeProvider>
     </>
   );

@@ -5,8 +5,17 @@ const HomePage = () => {
   const theme = useTheme();
 
   return (
-    <Box component="section">
-      <Stack sx={{ m: "auto" }} spacing={3}>
+    <Box
+      component="section"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        justifyContent: "space-around",
+        p: 4,
+      }}
+    >
+      <Stack spacing={3}>
         <Box
           alt="profile photo"
           component="img"
