@@ -20,7 +20,7 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         setColorMode(colorMode === "light" ? "dark" : "light");
       },
     }),
-    []
+    [colorMode, setColorMode]
   );
 
   const theme = React.useMemo(
