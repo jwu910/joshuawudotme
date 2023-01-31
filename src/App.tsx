@@ -1,15 +1,10 @@
-import {
-  Container,
-  CssBaseline,
-  Stack,
-  useMediaQuery,
-} from "@mui/material";
+import { Container, CssBaseline, Stack, useMediaQuery } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import JWThemeProvider from "./context/theme";
 
 const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));
 const HomePage = React.lazy(() => import("./pages/HomePage"));
@@ -20,22 +15,9 @@ const HomePage = React.lazy(() => import("./pages/HomePage"));
 */
 
 function App() {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: prefersDarkMode ? "dark" : "light",
-          contrastThreshold: 3,
-        },
-      }),
-    [prefersDarkMode]
-  );
-
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <JWThemeProvider>
         <CssBaseline enableColorScheme />
         <Router>
           <Navbar />
@@ -67,7 +49,7 @@ function App() {
             <Footer />
           </Container>
         </Router>
-      </ThemeProvider>
+      </JWThemeProvider>
     </>
   );
 }
