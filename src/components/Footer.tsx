@@ -51,8 +51,17 @@ const FooterContextProvider = (props: IFooterContextProps) => {
 
 const Footer = () => {
   return (
-    <FooterContextProvider>
-      <Container disableGutters sx={{ zIndex: 1001 }}>
+    <Container
+      component="footer"
+      maxWidth="md"
+      sx={{
+        zIndex: 1001,
+        p: 2,
+        bottom: 0,
+        position: "absolute",
+      }}
+    >
+      <FooterContextProvider>
         <ZeeboPopup />
         <Stack
           direction={{ xs: "column", md: "row" }}
@@ -75,8 +84,8 @@ const Footer = () => {
             &copy; 2016 - {new Date().getFullYear()}
           </Typography>
         </Stack>
-      </Container>
-    </FooterContextProvider>
+      </FooterContextProvider>
+    </Container>
   );
 };
 
