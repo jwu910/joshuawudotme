@@ -37,10 +37,11 @@ const ZeeboPopup = () => {
         sx={{
           bottom: footerContext.zeebo,
           height: "100px",
+          left: 0,
           position: "fixed",
+          transition: "bottom 1s ease-in-out",
           width: "100px",
           zIndex: 100,
-          transition: "bottom 1s ease-in-out",
         }}
       />
     </>

@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { createContext, useState } from "react";
 import { ZeeboPopup } from "../components/ZeeboPopup";
 
@@ -52,37 +52,30 @@ const FooterContextProvider = (props: IFooterContextProps) => {
 const Footer = () => {
   return (
     <FooterContextProvider>
-      <Box
-        sx={{
-          backgroundColor: "transparent",
-          bottom: 0,
-          display: "flex",
-          left: 0,
-          p: 2,
-          position: "relative",
-          width: "100vw",
-          zIndex: 1001,
-        }}
-      >
+      <Container disableGutters sx={{ zIndex: 1001 }}>
         <ZeeboPopup />
         <Stack
-          sx={{ width: "100%", display: "flex" }}
-          spacing={2}
-          direction="row"
+          direction={{ xs: "column", md: "row" }}
+          justifyContent="space-between"
         >
-          <Box sx={{ m: "auto", display: "flex" }}>
-            Built with 😻 | Supported by
+          <Typography textAlign={{ xs: "right" }}>
+            Built with ☕ &amp; 😻
+          </Typography>
+          <Typography textAlign={{ xs: "right" }}>
+            Supported by
             <Box component="strong" sx={{ px: 1 }}>
               Zeebo
             </Box>
-            and{" "}
-            <Box component="strong" sx={{ px: 1 }}>
+            and
+            <Box component="strong" sx={{ pl: 1 }}>
               Zuko
-            </Box>{" "}
-            | &copy; 2016 - {new Date().getFullYear()}
-          </Box>
+            </Box>
+          </Typography>
+          <Typography textAlign={{ xs: "right" }}>
+            &copy; 2016 - {new Date().getFullYear()}
+          </Typography>
         </Stack>
-      </Box>
+      </Container>
     </FooterContextProvider>
   );
 };

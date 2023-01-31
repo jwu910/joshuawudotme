@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+declare module '@mui/material/styles/createPalette'
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
