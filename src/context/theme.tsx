@@ -1,5 +1,9 @@
 import { useMediaQuery } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import {
+  createTheme,
+  PaletteColorOptions,
+  ThemeProvider,
+} from "@mui/material/styles";
 import * as React from "react";
 import useLocalStorage from "../hooks/use-local-storage";
 
@@ -24,15 +28,26 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
   );
 
   const theme = React.useMemo(() => {
+    const getColorModeObj = (
+      light: PaletteColorOptions,
+      dark: PaletteColorOptions
+    ): PaletteColorOptions => {
+      if (colorMode === "light") {
+        return light;
+      } else {
+        return dark;
+      }
+    };
+
     const createdTheme = createTheme({
       palette: {
         background: {
-          default: colorMode === "light" ? "#FFF5EB" : "#214045",
+          ...(colorMode === "light"
+            ? { default: "#FFF5EB" }
+            : { default: "#214045" }),
         },
-        primary: { main: "#FFB260" },
-        secondary: {
-          main: "#90708C",
-        },
+        primary: getColorModeObj({ main: "#FFB260" }, { main: "#90708C" }),
+        secondary: getColorModeObj({ main: "#90708C" }, { main: "#FFB260" }),
         info: { main: "#58A4B0" },
         text: {
           ...(colorMode === "light"
