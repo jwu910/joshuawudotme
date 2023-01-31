@@ -1,4 +1,4 @@
-import { Container, CssBaseline, Stack, useMediaQuery } from "@mui/material";
+import { Container, CssBaseline, Stack } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
