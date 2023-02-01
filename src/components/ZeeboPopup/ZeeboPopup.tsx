@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import zeebo from "../../assets/zeebo.png";
 import { FooterContext } from "../Footer";
 import "./ZeeboPopup.scss";
@@ -7,6 +7,11 @@ import "./ZeeboPopup.scss";
 // TODO: Bounce zeebo after delay
 const ZeeboPopup = () => {
   const footerContext = useContext(FooterContext);
+
+  useEffect(() => {
+    const image = new Image();
+    image.src = zeebo;
+  }, []);
 
   return (
     <>
