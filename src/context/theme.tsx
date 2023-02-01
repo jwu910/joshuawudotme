@@ -11,6 +11,16 @@ export const ThemeContext = React.createContext({
   toggleColorMode: () => {},
 });
 
+const COLORS = {
+  BLUEISH_GREEN_DARK: "#214045",
+  ORANGE_LIGHTISH: "#FFF5EB",
+  PINK_PURPLE_BRIGHT: "#C1AEBE",
+  PINK_PURPLE: "#90708C",
+  TEAL_DARK: "",
+  TEAL: "",
+  ZUKOS_BELLY: "#FFB260",
+};
+
 export default function JWThemeProvider(props: React.PropsWithChildren) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [colorMode, setColorMode] = useLocalStorage(
@@ -43,22 +53,28 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
       palette: {
         background: {
           ...(colorMode === "light"
-            ? { default: "#FFF5EB" }
-            : { default: "#214045" }),
+            ? { default: COLORS.ORANGE_LIGHTISH }
+            : { default: COLORS.BLUEISH_GREEN_DARK }),
         },
-        primary: getColorModeObj({ main: "#FFB260" }, { main: "#90708C" }),
-        secondary: getColorModeObj({ main: "#90708C" }, { main: "#FFB260" }),
-        info: { main: "#58A4B0" },
+        primary: getColorModeObj(
+          { main: COLORS.ZUKOS_BELLY },
+          { main: COLORS.PINK_PURPLE_BRIGHT }
+        ),
+        secondary: getColorModeObj(
+          { main: COLORS.PINK_PURPLE },
+          { main: COLORS.ZUKOS_BELLY }
+        ),
+        info: { main: "#58A4B0" }, // unused
         text: {
           ...(colorMode === "light"
             ? {
-                primary: "#0F192E",
-                secondary: "#2D4B8B",
+                primary: "#0F192E", // almost black
+                secondary: "#2D4B8B", // darker blue -- change this to something less blue
                 disabled: "#567AC8",
               }
             : {
-                primary: "#ACD2D8",
-                secondary: "#58A4B0",
+                primary: "#ACD2D8", // light teal
+                secondary: "#58A4B0", // darker teal
                 disabled: "#41818B",
               }),
         },
