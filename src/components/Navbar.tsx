@@ -1,30 +1,38 @@
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { Box, IconButton, Link, Stack, useTheme } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Link,
+  Stack,
+  Tab,
+  Tabs,
+  useTheme,
+} from "@mui/material";
 import logo from "../assets/wu_logo.png";
-// import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
+import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../context/theme";
 
 const Navbar = () => {
   const theme = useTheme();
   const { toggleColorMode } = useContext(ThemeContext);
-  // const useRouteMatch = (patterns: readonly string[]) => {
-  //   const { pathname } = useLocation();
+  const useRouteMatch = (patterns: readonly string[]) => {
+    const { pathname } = useLocation();
 
-  //   for (let i = 0; i < patterns.length; i += 1) {
-  //     const pattern = patterns[i];
-  //     const possibleMatch = matchPath(pattern, pathname);
-  //     if (possibleMatch !== null) {
-  //       return possibleMatch;
-  //     }
-  //   }
+    for (let i = 0; i < patterns.length; i += 1) {
+      const pattern = patterns[i];
+      const possibleMatch = matchPath(pattern, pathname);
+      if (possibleMatch !== null) {
+        return possibleMatch;
+      }
+    }
 
-  //   return null;
-  // };
+    return null;
+  };
 
-  // const routeMatch = useRouteMatch(["/projects", "/contact", "/"]);
-  // const currentTab = routeMatch?.pattern?.path;
+  const routeMatch = useRouteMatch(["/projects", "/contact", "/"]);
+  const currentTab = routeMatch?.pattern?.path;
   const iconStyles = {
     height: "40px",
     width: "40px",
@@ -47,21 +55,30 @@ const Navbar = () => {
         <img src={logo} height="40" alt="logo" />
       </Link>
 
-      {/* <Tabs sx={{ ml: 2 }} value={currentTab}>
-        <Tab label="Home" value="/" to="/" component={RouterLink} />
+      <Tabs sx={{ ml: 2 }} value={currentTab}>
         <Tab
+          component={RouterLink}
+          label="Home"
+          sx={{ fontWeight: "bold" }}
+          to="/"
+          value="/"
+          />
+        <Tab
+          component={RouterLink}
           label="Projects"
-          value="/projects"
+          sx={{ fontWeight: "bold" }}
           to="/projects"
-          component={RouterLink}
+          value="/projects"
         />
         <Tab
-          label="Contact"
-          value="/contact"
-          to="/contact"
           component={RouterLink}
+          disabled
+          label="Contact"
+          sx={{ fontWeight: "bold" }}
+          to="/contact"
+          value="/contact"
         />
-      </Tabs> */}
+      </Tabs>
 
       <Stack
         direction="row"

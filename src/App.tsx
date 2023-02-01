@@ -19,14 +19,14 @@ function App() {
     <>
       <JWThemeProvider>
         <CssBaseline enableColorScheme />
-        <Navbar />
-        <Container
-          aria-label="main content"
-          disableGutters
-          maxWidth="md"
-          sx={{ height: "100%" }}
-        >
-          <Router>
+        <Router>
+          <Navbar />
+          <Container
+            aria-label="main content"
+            disableGutters
+            maxWidth="md"
+            sx={{ height: "100%" }}
+          >
             <Container disableGutters sx={{ height: "100%" }}>
               <Stack
                 sx={{ height: "100%", display: "flex" }}
@@ -54,8 +54,8 @@ function App() {
                 <Footer />
               </Stack>
             </Container>
-          </Router>
-        </Container>
+          </Container>
+        </Router>
       </JWThemeProvider>
     </>
   );
