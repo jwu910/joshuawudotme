@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { createContext, useState } from "react";
-import { ZeeboPopup } from "../components/ZeeboPopup";
+import { ZeeboPopup } from "./Cats";
 
 interface IFooterContext {
   setZuko: Function;
