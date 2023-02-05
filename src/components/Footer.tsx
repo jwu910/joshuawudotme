@@ -1,6 +1,6 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { createContext, useState } from "react";
-import { ZeeboPopup } from "./Cats";
+import { ZeeboPopup, ZukoPopup } from "./Cats";
 
 interface IFooterContext {
   setZuko: Function;
@@ -32,6 +32,7 @@ const FooterContextProvider = (props: IFooterContextProps) => {
   };
 
   const handleSetZuko = (val: number): void => {
+    console.log("MEEEOOOWW!!");
     setZuko(val);
   };
 
@@ -62,6 +63,7 @@ const Footer = () => {
       }}
     >
       <FooterContextProvider>
+        <ZukoPopup />
         <ZeeboPopup />
         <Stack
           direction={{ xs: "column", md: "row" }}
