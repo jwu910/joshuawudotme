@@ -10,10 +10,10 @@ const ZeeboPopup = () => {
         containerWidth="105px"
         end={0}
         imgPath={zeebo}
-        imgWidth="100px"
+        imgWidth="150px"
         placement="left"
-        imgHeight="100px"
-        start={-100}
+        imgHeight="150px"
+        start={-145}
       />
     </>
   );

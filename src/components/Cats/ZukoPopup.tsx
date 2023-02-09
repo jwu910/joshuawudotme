@@ -13,7 +13,7 @@ const ZukoPopup = () => {
         imgWidth="110px"
         imgHeight="70px"
         placement="right"
-        start={-100}
+        start={-80}
       />
     </>
   );

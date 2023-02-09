@@ -23,8 +23,8 @@ const defaultFooterContext: IFooterContext = {
 export const FooterContext = createContext(defaultFooterContext);
 
 const FooterContextProvider = (props: IFooterContextProps) => {
-  const [zeebo, setZeebo] = useState<number>(-100);
-  const [zuko, setZuko] = useState<number>(-100);
+  const [zeebo, setZeebo] = useState<number>(-145);
+  const [zuko, setZuko] = useState<number>(-80);
 
   const handleSetZeebo = (val: number): void => {
     console.log("Meowww!");
