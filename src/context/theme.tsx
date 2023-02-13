@@ -13,12 +13,14 @@ export const ThemeContext = React.createContext({
 
 const COLORS = {
   BLUEISH_GREEN_DARK: "#214045",
+  BLUEISH_GREEN_LIGHT: "#A5A5A5",
   ORANGE_LIGHTISH: "#FFF5EB",
   PINK_PURPLE_BRIGHT: "#C1AEBE",
   PINK_PURPLE: "#90708C",
   TEAL_DARK: "",
   TEAL: "",
   ZUKOS_BELLY: "#FFB260",
+  ZUKOS_BELLY_LIGHT: "#BFA384",
 };
 
 export default function JWThemeProvider(props: React.PropsWithChildren) {
@@ -61,21 +63,21 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
           { main: COLORS.PINK_PURPLE_BRIGHT }
         ),
         secondary: getColorModeObj(
-          { main: COLORS.PINK_PURPLE },
+          { main: COLORS.BLUEISH_GREEN_DARK },
           { main: COLORS.ZUKOS_BELLY }
         ),
         info: { main: "#58A4B0" }, // unused
         text: {
           ...(colorMode === "light"
             ? {
-                primary: "#0F192E", // almost black
-                secondary: "#2D4B8B", // darker blue -- change this to something less blue
-                disabled: "#567AC8",
+                primary: "#0F192E",
+                secondary: COLORS.BLUEISH_GREEN_DARK,
+                disabled: COLORS.BLUEISH_GREEN_LIGHT,
               }
             : {
-                primary: "#ACD2D8", // light teal
-                secondary: "#58A4B0", // darker teal
-                disabled: "#41818B",
+                primary: "#ACD2D8",
+                secondary: COLORS.ZUKOS_BELLY,
+                disabled: COLORS.ZUKOS_BELLY_LIGHT,
               }),
         },
         mode: colorMode,
