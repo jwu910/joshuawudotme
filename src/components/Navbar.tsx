@@ -38,7 +38,6 @@ const NAV_ITEMS: NavItem[] = [
   {
     to: "/contact",
     label: "Contact",
-    disabled: true,
   },
 ];
 
