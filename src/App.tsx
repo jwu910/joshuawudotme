@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import JWThemeProvider from "./context/theme";
+import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 
@@ -40,8 +41,10 @@ function App() {
                   <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/projects" element={<ProjectsPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
                   </Routes>
                 </Suspense>
+
                 <Footer />
               </Stack>
             </Container>
