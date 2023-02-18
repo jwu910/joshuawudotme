@@ -1,6 +1,6 @@
-import React from "react";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
@@ -15,10 +15,9 @@ import {
   Toolbar,
   useTheme,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../assets/wu_logo.png";
+import React, { useContext } from "react";
 import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import logo from "../assets/wu_logo.png";
 import { ThemeContext } from "../context/theme";
 
 interface NavItem {
@@ -107,10 +106,11 @@ const Navbar = () => {
               return (
                 <Tab
                   component={RouterLink}
-                  label={navItem.label}
-                  to={navItem.to}
                   disabled={!!navItem?.disabled}
+                  key={navItem.label}
+                  label={navItem.label}
                   sx={{ fontWeight: "bold" }}
+                  to={navItem.to}
                 ></Tab>
               );
             })}
