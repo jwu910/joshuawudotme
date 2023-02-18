@@ -33,24 +33,12 @@ function App() {
                 spacing={2}
                 justifyContent="space-between"
               >
-                <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <Suspense fallback={<CircularProgress />}>
-                        <HomePage />
-                      </Suspense>
-                    }
-                  />
-                  <Route
-                    path="/projects"
-                    element={
-                      <Suspense fallback={<CircularProgress />}>
-                        <ProjectsPage />
-                      </Suspense>
-                    }
-                  />
-                </Routes>
+                <Suspense fallback={<CircularProgress />}>
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/projects" element={<ProjectsPage />} />
+                  </Routes>
+                </Suspense>
                 <Footer />
               </Stack>
             </Container>
