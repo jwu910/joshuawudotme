@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line import/no-unresolved
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.scss";
