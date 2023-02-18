@@ -69,10 +69,10 @@ const Footer = () => {
           direction={{ xs: "column", md: "row" }}
           justifyContent="space-between"
         >
-          <Typography textAlign={{ xs: "right" }}>
+          <Typography sx={{ my: "auto" }} textAlign={{ xs: "right" }}>
             Built with ☕ &amp; 😻
           </Typography>
-          <Typography textAlign={{ xs: "right" }}>
+          <Typography sx={{ my: "auto" }} textAlign={{ xs: "right" }}>
             Supported by
             <Box component="strong" sx={{ px: 1 }}>
               Zeebo
@@ -82,9 +82,18 @@ const Footer = () => {
               Zuko
             </Box>
           </Typography>
-          <Typography textAlign={{ xs: "right" }}>
+          <Typography sx={{ my: "auto" }} textAlign={{ xs: "right" }}>
             &copy; 2016 - {new Date().getFullYear()}
           </Typography>
+          <Box sx={{ ml: { xs: "auto", md: "unset" } }}>
+            <iframe
+              src="https://github.com/sponsors/jwu910/button"
+              title="Sponsor Josh"
+              height="32"
+              width="114"
+              style={{ border: 0, borderRadius: "6px" }}
+            ></iframe>
+          </Box>
         </Stack>
       </FooterContextProvider>
     </Container>
