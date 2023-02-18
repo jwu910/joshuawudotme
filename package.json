@@ -17,6 +17,7 @@
     "start": "vite serve",
     "build": "vite build",
     "serve": "vite preview",
+    "test": "echo \"No tests yet.\"",
     "lint": "eslint .; prettier --check .",
     "lint:fix": "eslint --fix . && prettier --write ."
   },
