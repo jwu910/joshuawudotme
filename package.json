@@ -7,13 +7,6 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.6",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.11",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
@@ -21,19 +14,15 @@
     "typescript": "^4.9.4"
   },
   "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
+    "start": "vite serve",
+    "build": "vite build",
     "serve": "vite preview",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint .; prettier --check .",
+    "lint:fix": "eslint --fix . && prettier --write ."
   },
   "eslintConfig": {
     "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:import/recommended",
-      "plugin:jsx-a11y/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "eslint-config-prettier"
+      "react-app"
     ],
     "settings": {
       "react": {
@@ -48,7 +37,8 @@
             ".ts",
             ".tsx"
           ]
-        }
+        },
+        "typescript": {}
       }
     },
     "rules": {
@@ -71,11 +61,14 @@
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "@types/node": "^16.18.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "jsdom": "^21.1.0",
+    "@testing-library/user-event": "^13.5.0",
     "eslint": "^8.34.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.4",
     "vite": "^4.1.2",
     "vite-plugin-svgr": "^2.4.0",

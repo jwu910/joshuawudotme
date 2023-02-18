@@ -29,7 +29,7 @@ const HomePage = () => {
           }}
         />
         <Typography variant="h1" sx={{ textAlign: "center" }}>
-          Hello Nerds, I'm Josh
+          Hello Nerds, I&apos;m Josh
         </Typography>
       </Stack>
     </Box>
