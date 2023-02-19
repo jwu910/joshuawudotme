@@ -124,7 +124,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               variant="text"
-              sx={{ fontWeight: "bold" }}
+              sx={{ color: theme.palette.info.main, fontWeight: "bold" }}
               href="https://calendly.com/wujoshua/boba-talk-30-min"
               title="Schedule a free 1:1 mentoring session with me!"
             >

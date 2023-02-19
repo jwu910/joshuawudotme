@@ -66,7 +66,11 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
           { main: COLORS.BLUEISH_GREEN_DARK },
           { main: COLORS.ZUKOS_BELLY }
         ),
-        info: { main: "#58A4B0" }, // unused
+        info: {
+          ...(colorMode === "light"
+            ? { main: "#58A4B0" }
+            : { main: COLORS.PINK_PURPLE }),
+        },
         text: {
           ...(colorMode === "light"
             ? {
