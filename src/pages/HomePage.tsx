@@ -1,21 +1,18 @@
-import { Box, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
 import profile from "../assets/profile.jpg";
 
 const HomePage = () => {
   const theme = useTheme();
 
   return (
-    <Box
-      component="section"
+    <Container
       sx={{
         display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        justifyContent: "space-around",
-        p: 4,
+        height: "auto",
+        mt: 8,
       }}
     >
-      <Stack spacing={3}>
+      <Stack spacing={3} sx={{ m: "auto", display: "flex" }}>
         <Box
           alt="profile photo"
           component="img"
@@ -32,7 +29,7 @@ const HomePage = () => {
           Hello Nerds, I&apos;m Josh
         </Typography>
       </Stack>
-    </Box>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Container, CssBaseline, Stack } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Footer from "./components/Footer";
@@ -27,27 +27,18 @@ function App() {
           <Navbar />
           <Container
             aria-label="main content"
-            disableGutters
             maxWidth="md"
-            sx={{ height: "100%" }}
+            sx={{ height: "auto" }}
           >
-            <Container disableGutters sx={{ height: "100%" }}>
-              <Stack
-                sx={{ height: "100%", display: "flex" }}
-                spacing={2}
-                justifyContent="space-between"
-              >
-                <Suspense fallback={<CircularProgress />}>
-                  <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/projects" element={<ProjectsPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
-                  </Routes>
-                </Suspense>
+            <Suspense fallback={<CircularProgress />}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+              </Routes>
+            </Suspense>
 
-                <Footer />
-              </Stack>
-            </Container>
+            <Footer />
           </Container>
         </Router>
       </JWThemeProvider>

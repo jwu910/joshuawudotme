@@ -1,22 +1,22 @@
-import { Box, Stack, Typography, useTheme } from "@mui/material";
-import CalendlyWidget from "../components/CalendlyWidget";
+import { Box, Stack, useTheme } from "@mui/material";
+import { createRef } from "react";
 
 const ContactPage = () => {
+  const widgetRef = createRef();
   const theme = useTheme();
-
   return (
     <Box
       component="section"
       sx={{
-        display: "flex",
-        flexDirection: "column",
+        backgroundColor: theme.palette.background.default,
+        display: "block",
         height: "100%",
+        minHeight: "100%",
         justifyContent: "space-around",
         p: 4,
       }}
     >
       <Stack spacing={3}>
-        <CalendlyWidget />
       </Stack>
     </Box>
   );
