@@ -25,11 +25,7 @@ function App() {
         <CssBaseline enableColorScheme />
         <Router>
           <Navbar />
-          <Container
-            aria-label="main content"
-            maxWidth="md"
-            sx={{ height: "auto" }}
-          >
+          <Container maxWidth="md" sx={{ height: "auto" }}>
             <Suspense fallback={<CircularProgress />}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -37,7 +33,6 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
               </Routes>
             </Suspense>
-
             <Footer />
           </Container>
         </Router>
