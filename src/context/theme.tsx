@@ -15,6 +15,7 @@ const COLORS = {
   BLUEISH_GREEN_DARK: "#214045",
   BLUEISH_GREEN_LIGHT: "#A5A5A5",
   ORANGE_LIGHTISH: "#FFF5EB",
+  ORANGE_LIGHTISH_LIGHT: "#FFD5AB",
   PINK_PURPLE_BRIGHT: "#C1AEBE",
   PINK_PURPLE: "#90708C",
   TEAL_DARK: "",
@@ -59,7 +60,7 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
             : { default: COLORS.BLUEISH_GREEN_DARK }),
         },
         primary: getColorModeObj(
-          { main: COLORS.ZUKOS_BELLY },
+          { main: COLORS.ORANGE_LIGHTISH_LIGHT },
           { main: COLORS.PINK_PURPLE_BRIGHT }
         ),
         secondary: getColorModeObj(
@@ -69,7 +70,7 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         info: {
           ...(colorMode === "light"
             ? { main: "#58A4B0" }
-            : { main: COLORS.PINK_PURPLE }),
+            : { main: "#58A4B0" }),
         },
         text: {
           ...(colorMode === "light"

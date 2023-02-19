@@ -117,8 +117,8 @@ const Navbar = () => {
                 ></Tab>
               );
             })}
+
             <Button
-              aria-label="External link to book a free one on one mentoring session with Joshua"
               LinkComponent={"a"}
               size="small"
               target="_blank"
