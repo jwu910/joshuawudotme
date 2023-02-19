@@ -1,10 +1,4 @@
-import {
-  Paper,
-  Box,
-  Stack,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Paper, Box, Stack, Typography, useTheme } from "@mui/material";
 import { createContext, useState } from "react";
 import { ZeeboPopup, ZukoPopup } from "./Cats";
 

@@ -16,8 +16,7 @@ const ContactPage = () => {
         p: 4,
       }}
     >
-      <Stack spacing={3}>
-      </Stack>
+      <Stack spacing={3}></Stack>
     </Box>
   );
 };
