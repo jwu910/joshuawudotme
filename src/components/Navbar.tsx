@@ -1,9 +1,11 @@
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import LaunchIcon from "@mui/icons-material/Launch";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
+  Button,
   Container,
   IconButton,
   Link,
@@ -21,9 +23,10 @@ import logo from "../assets/wu_logo.png";
 import { ThemeContext } from "../context/theme";
 
 interface NavItem {
-  to: string;
-  label: string;
   disabled?: boolean;
+  href?: string;
+  label: string;
+  to: string;
 }
 
 const NAV_ITEMS: NavItem[] = [
@@ -35,10 +38,11 @@ const NAV_ITEMS: NavItem[] = [
     to: "/projects",
     label: "Projects",
   },
-  {
-    to: "/contact",
-    label: "Contact",
-  },
+  // {
+  //   disabled: true,
+  //   to: "/contact",
+  //   label: "Contact",
+  // },
 ];
 
 const Navbar = () => {
@@ -86,7 +90,7 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar>
+    <AppBar position="relative">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
@@ -113,6 +117,19 @@ const Navbar = () => {
                 ></Tab>
               );
             })}
+            <Button
+              aria-label="External link to book a free one on one mentoring session with Joshua"
+              LinkComponent={"a"}
+              size="small"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="text"
+              sx={{ fontWeight: "bold" }}
+              href="https://calendly.com/wujoshua/boba-talk-30-min"
+              title="Schedule a free 1:1 mentoring session with me!"
+            >
+              Book a BobaTalk <LaunchIcon sx={{ height: "1.25rem" }} />
+            </Button>
           </Tabs>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -156,6 +173,14 @@ const Navbar = () => {
                   </MenuItem>
                 );
               })}
+              <MenuItem
+                target="_blank"
+                rel="noopener noreferrer"
+                component={RouterLink}
+                to="https://calendly.com/wujoshua/boba-talk-30-min"
+              >
+                BobaTalk <LaunchIcon sx={{ height: "1rem" }} />
+              </MenuItem>
             </Menu>
           </Box>
 

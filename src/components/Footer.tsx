@@ -1,4 +1,10 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import {
+  Paper,
+  Box,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { createContext, useState } from "react";
 import { ZeeboPopup, ZukoPopup } from "./Cats";
 
@@ -51,21 +57,29 @@ const FooterContextProvider = (props: IFooterContextProps) => {
 };
 
 const Footer = () => {
+  const theme = useTheme();
+
   return (
-    <Container
-      component="footer"
-      maxWidth="md"
+    <Paper
       sx={{
-        zIndex: 1001,
-        p: 2,
+        backgroundColor: theme.palette.background.default,
+        borderColor: "transparent",
         bottom: 0,
-        position: "absolute",
+        left: 0,
+        marginTop: "calc(10% + 60px)",
+        p: 2,
+        position: "fixed",
+        width: "100%",
       }}
+      component="footer"
+      variant="outlined"
     >
       <FooterContextProvider>
         <ZukoPopup />
         <ZeeboPopup />
         <Stack
+          sx={{ m: "auto" }}
+          maxWidth="md"
           direction={{ xs: "column", md: "row" }}
           justifyContent="space-between"
         >
@@ -96,7 +110,7 @@ const Footer = () => {
           </Box>
         </Stack>
       </FooterContextProvider>
-    </Container>
+    </Paper>
   );
 };
 
