@@ -7,8 +7,8 @@ import viteTsconfigPaths from "vite-tsconfig-paths";
 dns.setDefaultResultOrder("verbatim");
 
 export default defineConfig({
-  plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
   build: {
     outDir: "build",
   },
+  plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
 });

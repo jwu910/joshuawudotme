@@ -4,11 +4,17 @@
   "private": true,
   "node": ">= 16",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.3",
+    "@types/node": "^16.18.3",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
-    "sass": "^1.57.1",
-    "typescript": "^4.9.4"
+    "sass": "^1.57.1"
   },
   "scripts": {
     "start": "vite serve",
@@ -19,6 +25,13 @@
     "lint:fix": "eslint --fix . && prettier --write ."
   },
   "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true
+    },
     "extends": [
       "plugin:react/recommended",
       "plugin:jsx-a11y/recommended"
@@ -60,16 +73,9 @@
     ]
   },
   "devDependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.9",
-    "@mui/material": "^5.11.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.18.3",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "@vitejs/plugin-react": "^3.1.0",
@@ -78,6 +84,7 @@
     "eslint-plugin-react": "^7.32.2",
     "jsdom": "^21.1.0",
     "prettier": "^2.8.4",
+    "typescript": "^4.9.4",
     "vite": "^4.1.2",
     "vite-plugin-svgr": "^2.4.0",
     "vite-tsconfig-paths": "^4.0.5"

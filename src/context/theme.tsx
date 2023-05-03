@@ -3,9 +3,11 @@ import {
   createTheme,
   PaletteColorOptions,
   ThemeProvider,
+  responsiveFontSizes,
 } from "@mui/material/styles";
 import * as React from "react";
 import useLocalStorage from "../hooks/use-local-storage";
+import "./_theme.scss";
 
 export const ThemeContext = React.createContext({
   toggleColorMode: () => {},
@@ -88,20 +90,30 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         mode: colorMode,
         contrastThreshold: 3,
       },
+      components: {
+        MuiCard: {
+          styleOverrides: {
+            root: {
+              transition: "all .2s ease-in-out",
+              "&:hover": {
+                transform: "scale(1.1)",
+                boxShadow:
+                  colorMode === "light"
+                    ? `0 0 5px ${COLORS.ZUKOS_BELLY}`
+                    : `0 0 5px ${COLORS.PINK_PURPLE_BRIGHT}`,
+              },
+            },
+          },
+        },
+        MuiStack: {
+          defaultProps: {
+            useFlexGap: true,
+          },
+        },
+      },
     });
 
-    // Override h1 heading with breakpoint sizing
-    createdTheme.typography.h1 = {
-      fontSize: "1.3rem",
-      [createdTheme.breakpoints.up("md")]: {
-        fontSize: "2rem",
-      },
-      [createdTheme.breakpoints.up("lg")]: {
-        fontSize: "3rem",
-      },
-    };
-
-    return createdTheme;
+    return responsiveFontSizes(createdTheme);
   }, [colorMode]);
 
   return (
