@@ -16,33 +16,7 @@ import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 
-// import { Suspense } from "react";
-// const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));
-// const HomePage = React.lazy(() => import("./pages/HomePage"));
-// Requirements:
-/*
-- List of projects with github pages
-    - dynamic links based off github API
-*/
-
 function App() {
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <HomePage />,
-  //   },
-  //   {
-  //     path: "projects",
-  //     loader: async () => {
-  //       return fetchRepositories();
-  //     },
-  //     element: <ProjectsPage />,
-  //   },
-  //   {
-  //     path: "/contact",
-  //     element: <ContactPage />,
-  //   },
-  // ]);
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
@@ -61,7 +35,6 @@ function App() {
     <>
       <JWThemeProvider>
         <CssBaseline enableColorScheme />
-        {/* <Router> */}
         <Navbar />
         <Container maxWidth="md" sx={{ height: "auto" }}>
           <React.Suspense fallback={<CircularProgress />}>
@@ -69,7 +42,6 @@ function App() {
           </React.Suspense>
           <Footer />
         </Container>
-        {/* </Router> */}
       </JWThemeProvider>
     </>
   );
