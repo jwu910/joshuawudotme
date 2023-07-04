@@ -1,15 +1,20 @@
-import { Container, CssBaseline } from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
-import * as React from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { Container, CssBaseline } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import * as React from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
-import { fetchRepositories } from './api/projects';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import JWThemeProvider from './context/theme';
-import ContactPage from './pages/ContactPage';
-import HomePage from './pages/HomePage';
-import ProjectsPage from './pages/ProjectsPage';
+import { fetchRepositories } from "./api/projects";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import JWThemeProvider from "./context/theme";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
 
 // import { Suspense } from "react";
 // const ProjectsPage = React.lazy(() => import("./pages/ProjectsPage"));

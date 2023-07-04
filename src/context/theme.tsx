@@ -96,7 +96,7 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
             root: {
               transition: "all .2s ease-in-out",
               "&:hover": {
-                transform: "scale(1.1)",
+                transform: "scale(1.01)",
                 boxShadow:
                   colorMode === "light"
                     ? `0 0 5px ${COLORS.ZUKOS_BELLY}`
