@@ -1,6 +1,5 @@
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import PreviewIcon from "@mui/icons-material/Preview";
-
 import {
   Box,
   Card,
@@ -10,7 +9,7 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 interface Repository {
   description: string;
@@ -113,7 +112,6 @@ const Projects = () => {
                   }
                 />
 
-                {/* Tooltip using PreviewIcon to create external link to a preview website if repository.homepage exists */}
                 <Tooltip
                   key={`${repository.name}-homepage`}
                   children={
