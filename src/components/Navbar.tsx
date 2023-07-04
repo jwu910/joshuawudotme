@@ -114,6 +114,7 @@ const Navbar = () => {
                   label={navItem.label}
                   sx={{ fontWeight: "bold" }}
                   to={navItem.to}
+                  value={navItem.to}
                 ></Tab>
               );
             })}
