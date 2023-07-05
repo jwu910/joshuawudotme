@@ -84,7 +84,7 @@ const Navbar = () => {
   };
 
   const MyIcon = () => (
-    <Link href="https://joshuawu.me">
+    <Link sx={{ display: "flex" }} href="https://joshuawu.me">
       <img src={logo} height="40" alt="logo" />
     </Link>
   );

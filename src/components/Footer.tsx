@@ -62,7 +62,6 @@ const Footer = () => {
         left: 0,
         marginTop: "calc(10% + 60px)",
         p: 2,
-        position: "fixed",
         width: "100%",
       }}
       component="footer"

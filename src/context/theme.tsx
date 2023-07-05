@@ -90,6 +90,11 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         mode: colorMode,
         contrastThreshold: 3,
       },
+      typography: {
+        h1: {
+          fontSize: "3rem",
+        },
+      },
       components: {
         MuiCard: {
           styleOverrides: {
