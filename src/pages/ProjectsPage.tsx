@@ -20,6 +20,7 @@ const ProjectsPage = () => {
         🪦 Check out the full graveyard at my{" "}
         <Link
           aria-label="Link to Joshua's full Github repositories"
+          color="secondary"
           href="https://github.com/jwu910?tab=repositories"
           rel="noopener noreferrer"
           target="_blank"
