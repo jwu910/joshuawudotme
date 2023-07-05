@@ -217,6 +217,7 @@ const Navbar = () => {
               title="LinkedIn"
               sx={{
                 ...iconStyles,
+                color: theme.palette.secondary.main,
               }}
             >
               <svg
@@ -236,6 +237,7 @@ const Navbar = () => {
               title="Github"
               sx={{
                 ...iconStyles,
+                color: theme.palette.secondary.main,
               }}
             >
               <svg
