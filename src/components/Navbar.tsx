@@ -104,6 +104,13 @@ const Navbar = () => {
               display: { xs: "none", md: "flex" },
             }}
             value={currentTab}
+            /**
+             * TODO: secondary color and primary colors need to be updated.
+             * Secondary is being used as normal coloring. Primary is the same color as
+             * background.
+             **/
+            textColor="secondary"
+            indicatorColor="secondary"
           >
             {NAV_ITEMS.map((navItem) => {
               return (
@@ -115,7 +122,7 @@ const Navbar = () => {
                   sx={{ fontWeight: "bold" }}
                   to={navItem.to}
                   value={navItem.to}
-                ></Tab>
+                />
               );
             })}
 

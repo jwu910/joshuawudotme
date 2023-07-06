@@ -16,8 +16,8 @@ export const ThemeContext = React.createContext({
 const COLORS = {
   BLUEISH_GREEN_DARK: "#214045",
   BLUEISH_GREEN_LIGHT: "#A5A5A5",
-  ORANGE_LIGHTISH: "#FFF5EB",
-  ORANGE_LIGHTISH_LIGHT: "#FFD5AB",
+  ORANGE_LIGHT_WHITE: "#FFF5EB",
+  ORANGE_LIGHT: "#FFD5AB",
   PINK_PURPLE_BRIGHT: "#C1AEBE",
   PINK_PURPLE: "#90708C",
   TEAL_DARK: "",
@@ -58,11 +58,11 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
       palette: {
         background: {
           ...(colorMode === "light"
-            ? { default: COLORS.ORANGE_LIGHTISH }
+            ? { default: COLORS.ORANGE_LIGHT_WHITE }
             : { default: COLORS.BLUEISH_GREEN_DARK }),
         },
         primary: getColorModeObj(
-          { main: COLORS.ORANGE_LIGHTISH_LIGHT },
+          { main: COLORS.ORANGE_LIGHT },
           { main: COLORS.PINK_PURPLE_BRIGHT }
         ),
         secondary: getColorModeObj(
