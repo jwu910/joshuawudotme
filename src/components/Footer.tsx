@@ -1,10 +1,10 @@
-import { Paper, Box, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Paper, Stack, Typography, useTheme } from "@mui/material";
 import { createContext, useState } from "react";
 import { ZeeboPopup, ZukoPopup } from "./Cats";
 
 interface IFooterContext {
-  setZuko: Function;
-  setZeebo: Function;
+  setZuko: (val: number) => void;
+  setZeebo: (val: number) => void;
   zeebo: number;
   zuko: number;
 }
@@ -60,7 +60,7 @@ const Footer = () => {
         borderColor: "transparent",
         bottom: 0,
         left: 0,
-        marginTop: "calc(10% + 60px)",
+        marginTop: "auto",
         p: 2,
         width: "100%",
       }}
