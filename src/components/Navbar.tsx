@@ -109,11 +109,34 @@ const Navbar = () => {
     </Link>
   );
 
+  const renderedTabs = NAV_ITEMS.map((navItem, index) => {
+    return (
+      <Tab
+        component={RouterLink}
+        disabled={!!navItem?.disabled}
+        key={`${navItem.to}-${index}`}
+        label={navItem.label}
+        rel={navItem.external ? "noopener noreferrer" : undefined}
+        sx={{ fontWeight: "bold" }}
+        target={navItem.external ? "_blank" : undefined}
+        title={navItem?.title}
+        to={navItem.to}
+        value={navItem.to}
+      />
+    );
+  });
+
   return (
     <AppBar position="relative">
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+          <Box
+            sx={{
+              minWidth: "40px",
+              display: { xs: "none", md: "flex" },
+              mr: 1,
+            }}
+          >
             <MyIcon />
           </Box>
 
@@ -132,22 +155,7 @@ const Navbar = () => {
             textColor="secondary"
             indicatorColor="secondary"
           >
-            {NAV_ITEMS.map((navItem, index) => {
-              return (
-                <Tab
-                  component={RouterLink}
-                  disabled={!!navItem?.disabled}
-                  key={`${navItem.to}-${index}`}
-                  label={navItem.label}
-                  rel={navItem.external ? "noopener noreferrer" : undefined}
-                  sx={{ fontWeight: "bold" }}
-                  target={navItem.external ? "_blank" : undefined}
-                  title={navItem?.title}
-                  to={navItem.to}
-                  value={navItem.to}
-                />
-              );
-            })}
+            {renderedTabs}
           </Tabs>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -161,6 +169,8 @@ const Navbar = () => {
             >
               <MenuIcon />
             </IconButton>
+
+            {/* Compact tabs */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -168,7 +178,6 @@ const Navbar = () => {
                 vertical: "bottom",
                 horizontal: "left",
               }}
-              keepMounted
               transformOrigin={{
                 vertical: "top",
                 horizontal: "left",
@@ -192,33 +201,19 @@ const Navbar = () => {
                  **/
                 textColor="secondary"
                 indicatorColor="secondary"
-                TabIndicatorProps={{
-                  sx: {
-                    minHeight: "48px",
-                  },
-                }}
               >
-                {NAV_ITEMS.map((navItem, index) => {
-                  return (
-                    <Tab
-                      component={RouterLink}
-                      disabled={!!navItem?.disabled}
-                      key={`${navItem.to}-${index}`}
-                      label={navItem.label}
-                      rel={navItem.external ? "noopener noreferrer" : undefined}
-                      sx={{ fontWeight: "bold" }}
-                      target={navItem.external ? "_blank" : undefined}
-                      title={navItem?.title}
-                      to={navItem.to}
-                      value={navItem.to}
-                    />
-                  );
-                })}
+                {renderedTabs}
               </Tabs>
             </Menu>
           </Box>
 
-          <Box sx={{ display: { xs: "flex", md: "none" }, ml: 6 }}>
+          <Box
+            sx={{
+              minWidth: "40px",
+              display: { xs: "flex", md: "none" },
+              ml: 6,
+            }}
+          >
             <MyIcon />
           </Box>
 
