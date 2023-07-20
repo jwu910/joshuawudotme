@@ -22,7 +22,6 @@ interface Repository {
   name: string;
   pushed_at: string;
   stargazers_count: number;
-  stargazers_url: string;
 }
 
 const Projects = () => {
@@ -164,7 +163,7 @@ const Projects = () => {
                 >
                   <IconButton
                     aria-label={`Visit the stargazer page for ${repository.name} which opens in a new window`}
-                    href={`${repository.stargazers_url}`}
+                    href={`${repository.html_url}/stargazers`}
                     rel="noopener noreferrer"
                     role="link"
                     sx={{
