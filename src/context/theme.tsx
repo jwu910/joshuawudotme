@@ -1,8 +1,8 @@
-import { useMediaQuery } from "@mui/material";
+import { PaletteMode, useMediaQuery } from "@mui/material";
 import {
-  createTheme,
   PaletteColorOptions,
   ThemeProvider,
+  createTheme,
   responsiveFontSizes,
 } from "@mui/material/styles";
 import * as React from "react";
@@ -30,8 +30,8 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
   const [colorMode, setColorMode] = useLocalStorage(
     "colorMode",
-    prefersDarkMode ? "dark" : "light"
-  );
+    prefersDarkMode ? "dark" : "light",
+  ) as [PaletteMode, React.Dispatch<React.SetStateAction<string>>];
 
   const colorModeModule = React.useMemo(
     () => ({
@@ -39,13 +39,13 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         setColorMode(colorMode === "light" ? "dark" : "light");
       },
     }),
-    [colorMode, setColorMode]
+    [colorMode, setColorMode],
   );
 
   const theme = React.useMemo(() => {
     const getColorModeObj = (
       light: PaletteColorOptions,
-      dark: PaletteColorOptions
+      dark: PaletteColorOptions,
     ): PaletteColorOptions => {
       if (colorMode === "light") {
         return light;
@@ -63,11 +63,11 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         },
         primary: getColorModeObj(
           { main: COLORS.ORANGE_LIGHT },
-          { main: COLORS.PINK_PURPLE_BRIGHT }
+          { main: COLORS.PINK_PURPLE_BRIGHT },
         ),
         secondary: getColorModeObj(
           { main: COLORS.BLUEISH_GREEN_DARK },
-          { main: COLORS.ZUKOS_BELLY }
+          { main: COLORS.ZUKOS_BELLY },
         ),
         info: {
           ...(colorMode === "light"

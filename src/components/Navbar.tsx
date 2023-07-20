@@ -17,8 +17,13 @@ import {
   Toolbar,
   useTheme,
 } from "@mui/material";
-import React, { useContext } from "react";
-import { Link as RouterLink, matchPath, useLocation } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import {
+  PathMatch,
+  Link as RouterLink,
+  matchPath,
+  useLocation,
+} from "react-router-dom";
 import logo from "../assets/wu_logo.png";
 import { ThemeContext } from "../context/theme";
 
@@ -45,25 +50,29 @@ const NAV_ITEMS: NavItem[] = [
   // },
 ];
 
+const useRouteMatch = (patterns: readonly string[]): PathMatch | null => {
+  const [routeMatch, setRouteMatch] = React.useState<PathMatch | null>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    patterns.forEach((pattern) => {
+      const possibleMatch = matchPath(pattern, pathname);
+      if (possibleMatch !== null) {
+        setRouteMatch(possibleMatch);
+      }
+    });
+  }, [pathname]);
+
+  return routeMatch;
+};
+
 const Navbar = () => {
   const theme = useTheme();
   const { toggleColorMode } = useContext(ThemeContext);
-  const useRouteMatch = (patterns: readonly string[]) => {
-    const { pathname } = useLocation();
-
-    for (let i = 0; i < patterns.length; i += 1) {
-      const pattern = patterns[i];
-      const possibleMatch = matchPath(pattern, pathname);
-      if (possibleMatch !== null) {
-        return possibleMatch;
-      }
-    }
-
-    return null;
-  };
 
   const routeMatch = useRouteMatch(["/projects", "/contact", "/"]);
-  const currentTab = routeMatch?.pattern?.path;
+  const currentTab = routeMatch?.pattern.path;
+
   const iconStyles = {
     height: { xs: "36px", md: "40px" },
     width: { xs: "36px", md: "40px" },
@@ -72,7 +81,7 @@ const Navbar = () => {
   };
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
+    null,
   );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
