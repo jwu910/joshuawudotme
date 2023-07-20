@@ -17,7 +17,17 @@ const ProjectsPage = () => {
       <Projects />
       <Divider sx={{ my: 2 }} />
       <Typography variant="body1">
-        🪦 Check out the full graveyard at my{" "}
+        <Typography
+          component="span"
+          sx={{
+            "&:hover": {
+              cursor: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🥲</text></svg>") 16 0,auto;`,
+            },
+          }}
+        >
+          🪦
+        </Typography>
+        Check out the full graveyard at my{" "}
         <Link
           aria-label="Link to Joshua's full Github repositories"
           color="secondary"
