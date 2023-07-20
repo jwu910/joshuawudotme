@@ -5,12 +5,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Box,
-  Button,
   Container,
   IconButton,
   Link,
   Menu,
-  MenuItem,
   Stack,
   Tab,
   Tabs,
@@ -29,9 +27,11 @@ import { ThemeContext } from "../context/theme";
 
 interface NavItem {
   disabled?: boolean;
+  external?: boolean;
   href?: string;
-  label: string;
+  label: string | React.ReactNode;
   to: string;
+  title?: string;
 }
 
 const NAV_ITEMS: NavItem[] = [
@@ -42,6 +42,17 @@ const NAV_ITEMS: NavItem[] = [
   {
     to: "/projects",
     label: "Projects",
+  },
+  {
+    external: true,
+    label: (
+      <Box display="flex" alignItems="center" color="info.main">
+        {" "}
+        Book a BobaTalk <LaunchIcon sx={{ height: "1.25rem" }} />
+      </Box>
+    ),
+    to: "https://calendly.com/wujoshua/boba-talk-30-min",
+    title: "Schedule a free 1:1 mentoring session with me!",
   },
   // {
   //   disabled: true,
@@ -121,32 +132,22 @@ const Navbar = () => {
             textColor="secondary"
             indicatorColor="secondary"
           >
-            {NAV_ITEMS.map((navItem) => {
+            {NAV_ITEMS.map((navItem, index) => {
               return (
                 <Tab
                   component={RouterLink}
                   disabled={!!navItem?.disabled}
-                  key={navItem.label}
+                  key={`${navItem.to}-${index}`}
                   label={navItem.label}
+                  rel={navItem.external ? "noopener noreferrer" : undefined}
                   sx={{ fontWeight: "bold" }}
+                  target={navItem.external ? "_blank" : undefined}
+                  title={navItem?.title}
                   to={navItem.to}
                   value={navItem.to}
                 />
               );
             })}
-
-            <Button
-              LinkComponent={"a"}
-              size="small"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="text"
-              sx={{ color: theme.palette.info.main, fontWeight: "bold" }}
-              href="https://calendly.com/wujoshua/boba-talk-30-min"
-              title="Schedule a free 1:1 mentoring session with me!"
-            >
-              Book a BobaTalk <LaunchIcon sx={{ height: "1.25rem" }} />
-            </Button>
           </Tabs>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -178,26 +179,42 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {NAV_ITEMS.map((navItem) => {
-                return (
-                  <MenuItem
-                    component={RouterLink}
-                    key={`${navItem.label}-${navItem.to}`}
-                    to={navItem.to}
-                    disabled={navItem?.disabled}
-                  >
-                    {navItem.label}
-                  </MenuItem>
-                );
-              })}
-              <MenuItem
-                target="_blank"
-                rel="noopener noreferrer"
-                component={RouterLink}
-                to="https://calendly.com/wujoshua/boba-talk-30-min"
+              <Tabs
+                orientation="vertical"
+                sx={{
+                  ml: { md: 2 },
+                }}
+                value={currentTab}
+                /**
+                 * TODO: secondary color and primary colors need to be updated.
+                 * Secondary is being used as normal coloring. Primary is the same color as
+                 * background.
+                 **/
+                textColor="secondary"
+                indicatorColor="secondary"
+                TabIndicatorProps={{
+                  sx: {
+                    minHeight: "48px",
+                  },
+                }}
               >
-                BobaTalk <LaunchIcon sx={{ height: "1rem" }} />
-              </MenuItem>
+                {NAV_ITEMS.map((navItem, index) => {
+                  return (
+                    <Tab
+                      component={RouterLink}
+                      disabled={!!navItem?.disabled}
+                      key={`${navItem.to}-${index}`}
+                      label={navItem.label}
+                      rel={navItem.external ? "noopener noreferrer" : undefined}
+                      sx={{ fontWeight: "bold" }}
+                      target={navItem.external ? "_blank" : undefined}
+                      title={navItem?.title}
+                      to={navItem.to}
+                      value={navItem.to}
+                    />
+                  );
+                })}
+              </Tabs>
             </Menu>
           </Box>
 
