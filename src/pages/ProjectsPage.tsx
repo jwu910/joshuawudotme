@@ -1,4 +1,4 @@
-import { Container, Divider, Link, Typography } from "@mui/material";
+import { Container, Divider, Link, Tooltip, Typography } from "@mui/material";
 
 import Projects from "../components/Projects";
 
@@ -17,16 +17,22 @@ const ProjectsPage = () => {
       <Projects />
       <Divider sx={{ my: 2 }} />
       <Typography variant="body1">
-        <Typography
-          component="span"
-          sx={{
-            "&:hover": {
-              cursor: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🥲</text></svg>") 16 0,auto;`,
-            },
-          }}
-        >
-          🪦
-        </Typography>
+        <Tooltip title="This comic sums up my project habits" placement="top">
+          <Typography
+            component={Link}
+            aria-label="Link to Buni Comic #1154"
+            href="https://www.bunicomic.com/comic/buni-1154/"
+            rel="noopener noreferrer"
+            target="_blank"
+            sx={{
+              "&:hover": {
+                cursor: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🥲</text></svg>") 16 0,auto;`,
+              },
+            }}
+          >
+            🪦
+          </Typography>
+        </Tooltip>
         Check out the full graveyard at my{" "}
         <Link
           aria-label="Link to Joshua's full Github repositories"
