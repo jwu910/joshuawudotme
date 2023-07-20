@@ -26,18 +26,26 @@ const HiddenSlideUp = (props: IProps) => {
     ...(props.placement === "left" ? { left: 0 } : { right: 0 }),
   };
 
+  const {
+    setZuko = () => {
+      console.log("Meooowww");
+    },
+    setZeebo = () => {
+      console.log("MEOOWW!");
+    },
+  } = footerContext;
   return (
     <>
       <Box
         onMouseEnter={() => {
           props.catName === "zeebo"
-            ? footerContext.setZeebo(props.end)
-            : footerContext.setZuko(props.end);
+            ? setZeebo && setZeebo(props.end)
+            : setZuko && setZuko(props.end);
         }}
         onMouseLeave={() => {
           props.catName === "zeebo"
-            ? footerContext.setZeebo(props.start)
-            : footerContext.setZuko(props.start);
+            ? setZeebo && setZeebo(props.start)
+            : setZuko && setZuko(props.start);
         }}
         className="hidden-slide-up"
         sx={{

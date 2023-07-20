@@ -17,9 +17,8 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    include: ["src", "./tsconfig.json"],
+    include: ["src"],
     project: "./tsconfig.json",
-    // project: true,
     tsconfigRootDir: __dirname,
     ecmaVersion: "latest",
     sourceType: "module",
@@ -65,6 +64,13 @@ module.exports = {
         },
       ],
       "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/ban-ts-comment": [
+        "warn",
+        {
+          "ts-ignore": "allow-with-description",
+          "ts-expect-error": "allow-with-description",
+        },
+      ],
     },
   },
 };

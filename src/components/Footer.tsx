@@ -3,8 +3,8 @@ import { createContext, useState } from "react";
 import { ZeeboPopup, ZukoPopup } from "./Cats";
 
 interface IFooterContext {
-  setZuko: (val: number) => void;
-  setZeebo: (val: number) => void;
+  setZuko: null | ((val: number) => void);
+  setZeebo: null | ((val: number) => void);
   zeebo: number;
   zuko: number;
 }
@@ -14,8 +14,12 @@ interface IFooterContextProps {
 }
 
 const defaultFooterContext: IFooterContext = {
-  setZeebo: (): void => {},
-  setZuko: (): void => {},
+  setZeebo: () => {
+    console.log("Meowww!");
+  },
+  setZuko: () => {
+    console.log("MEEEOOOWW!!");
+  },
   zeebo: -100,
   zuko: -100,
 };
