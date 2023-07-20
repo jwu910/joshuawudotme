@@ -11,7 +11,15 @@ const BasePage = () => {
     <JWThemeProvider>
       <CssBaseline enableColorScheme />
       <Navbar />
-      <Container maxWidth="md" sx={{ height: "auto", minHeight: "100vh" }}>
+      <Container
+        maxWidth="md"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "auto",
+          minHeight: "calc(100vh - 64px)",
+        }}
+      >
         <React.Suspense fallback={<CircularProgress />}>
           <Outlet />
         </React.Suspense>
