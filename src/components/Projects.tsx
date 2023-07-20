@@ -1,6 +1,8 @@
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import PreviewIcon from "@mui/icons-material/Preview";
+import StarIcon from "@mui/icons-material/Star";
 import {
+  Badge,
   Box,
   Card,
   IconButton,
@@ -15,9 +17,12 @@ interface Repository {
   description: string;
   fork: boolean;
   has_pages: boolean;
+  homepage: string;
   html_url: string;
   name: string;
-  homepage: string;
+  pushed_at: string;
+  stargazers_count: number;
+  stargazers_url: string;
 }
 
 const Projects = () => {
