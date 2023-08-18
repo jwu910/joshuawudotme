@@ -81,7 +81,7 @@ const Navbar = () => {
   const theme = useTheme();
   const { toggleColorMode } = useContext(ThemeContext);
 
-  const routeMatch = useRouteMatch(["/projects", "/contact", "/"]);
+  const routeMatch = useRouteMatch(NAV_ITEMS.map((item) => item.to));
   const currentTab = routeMatch?.pattern.path;
 
   const iconStyles = {

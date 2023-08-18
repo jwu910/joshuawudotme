@@ -57,8 +57,7 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
         return dark;
       }
     };
-
-    const createdTheme = createTheme({
+    let createdTheme = createTheme({
       palette: {
         background: {
           ...(colorMode === "light"
@@ -99,7 +98,19 @@ export default function JWThemeProvider(props: React.PropsWithChildren) {
           fontSize: "3rem",
         },
       },
+    });
+
+    createdTheme = createTheme(createdTheme, {
       components: {
+        MuiToolbar: {
+          styleOverrides: {
+            root: {
+              [createdTheme.breakpoints.up("sm")]: {
+                minHeight: "48px",
+              },
+            },
+          },
+        },
         MuiCard: {
           styleOverrides: {
             root: {
