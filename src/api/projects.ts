@@ -1,6 +1,6 @@
 export const fetchRepositories = async () => {
   const response = await fetch(
-    "https://api.github.com/users/jwu910/repos?affiliation=owner&fork=false",
+    "https://api.github.com/users/jwu910/repos?affiliation=owner&fork=false&sort=pushed&visibility=public",
     {
       headers: {
         Accept: "application/vnd.github.v3+json",
@@ -11,10 +11,15 @@ export const fetchRepositories = async () => {
 
   const data = (await response.json()) as Record<string, unknown>[];
 
-  const filteredRepos = data.filter(
-    (repository) =>
-      !repository.fork && repository.has_pages && repository.homepage,
-  );
+  const filteredRepos = data.filter((repository) => {
+    return (
+      !repository.fork &&
+      !repository.archived &&
+      repository.description != null &&
+      repository.homepage !== null &&
+      repository.homepage !== ""
+    );
+  });
 
   const repoData = await Promise.all(
     filteredRepos.map(async (repo) => {

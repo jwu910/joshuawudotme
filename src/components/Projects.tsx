@@ -124,7 +124,7 @@ const Projects = () => {
                   textAlign: "center",
                   width: "100%",
                 }}
-                variant="subtitle1"
+                variant="h5"
               >
                 {repository.name}
               </Typography>
@@ -152,20 +152,22 @@ const Projects = () => {
                   isExternalLink
                 />
 
-                <ProjectIconTooltip
-                  repository={repository}
-                  iconLinkUrl={repository.homepage}
-                  IconComponent={() => (
-                    <PreviewIcon
-                      color="secondary"
-                      sx={{ mx: 1, my: 0 }}
-                      fontSize="small"
-                    />
-                  )}
-                  aria-label={`Visit the preview webpage for ${repository.name} which opens in a new window`}
-                  tooltipUrl={repository.homepage}
-                  isExternalLink
-                />
+                {repository.homepage && (
+                  <ProjectIconTooltip
+                    repository={repository}
+                    iconLinkUrl={repository.homepage}
+                    IconComponent={() => (
+                      <PreviewIcon
+                        color="secondary"
+                        sx={{ mx: 1, my: 0 }}
+                        fontSize="small"
+                      />
+                    )}
+                    aria-label={`Visit the preview webpage for ${repository.name} which opens in a new window`}
+                    tooltipUrl={repository.homepage}
+                    isExternalLink
+                  />
+                )}
 
                 <ProjectIconTooltip
                   repository={repository}

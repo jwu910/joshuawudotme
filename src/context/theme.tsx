@@ -9,9 +9,13 @@ import * as React from "react";
 import useLocalStorage from "../hooks/use-local-storage";
 import "./_theme.scss";
 
-export const ThemeContext = React.createContext({
-  toggleColorMode: () => {},
-});
+interface IThemeContext {
+  toggleColorMode: () => void;
+}
+
+export const ThemeContext = React.createContext<IThemeContext>(
+  {} as IThemeContext,
+);
 
 const COLORS = {
   BLUEISH_GREEN_DARK: "#214045",
