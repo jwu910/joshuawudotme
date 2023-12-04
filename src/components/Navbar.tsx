@@ -51,7 +51,7 @@ const NAV_ITEMS: NavItem[] = [
         Book a BobaTalk <LaunchIcon sx={{ height: "1.25rem" }} />
       </Box>
     ),
-    to: "https://calendly.com/wujoshua/boba-talk-30-min",
+    to: "https://adplist.org/mentors/joshua-wu",
     title: "Schedule a free 1:1 mentoring session with me!",
   },
   // {
