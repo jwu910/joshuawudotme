@@ -1,5 +1,6 @@
 module.exports = {
   env: {
+    node: true,
     es6: true,
     browser: true,
     es2021: true,
@@ -26,7 +27,8 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "jsx-a11y", "prettier"],
   overrides: [
     {
-      files: ["*.js", "*.jsx", "*.cjs"],
+      extends: ["plugin:@typescript-eslint/disable-type-checked"],
+      files: ["*.js", "*.cjs", "vite-env.d.ts"],
     },
   ],
   settings: {
