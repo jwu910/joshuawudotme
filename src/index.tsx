@@ -25,13 +25,13 @@ const router = createBrowserRouter(
         element={<ProjectsPage />}
       />
       <Route path="/contact" element={<ContactPage />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

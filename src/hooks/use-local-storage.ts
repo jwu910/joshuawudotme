@@ -7,7 +7,10 @@ const useLocalStorage = <T>(storageKey: string, fallbackState: T) => {
       try {
         return JSON.parse(storedValue) as T;
       } catch (error) {
-        console.error(`Error parsing stored value for key '${storageKey}':`, error);
+        console.error(
+          `Error parsing stored value for key '${storageKey}':`,
+          error,
+        );
       }
     }
     return fallbackState;
