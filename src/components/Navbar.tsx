@@ -43,17 +43,17 @@ const NAV_ITEMS: NavItem[] = [
     to: "/projects",
     label: "Projects",
   },
-  {
-    external: true,
-    label: (
-      <Box display="flex" alignItems="center" color="info.main">
-        {" "}
-        Book a BobaTalk <LaunchIcon sx={{ height: "1.25rem" }} />
-      </Box>
-    ),
-    to: "https://adplist.org/mentors/joshua-wu",
-    title: "Schedule a free 1:1 mentoring session with me!",
-  },
+  // {
+  //   external: true,
+  //   label: (
+  //     <Box display="flex" alignItems="center" color="info.main">
+  //       {" "}
+  //       Book a BobaTalk <LaunchIcon sx={{ height: "1.25rem" }} />
+  //     </Box>
+  //   ),
+  //   to: "https://adplist.org/mentors/joshua-wu",
+  //   title: "Schedule a free 1:1 mentoring session with me!",
+  // },
   // {
   //   disabled: true,
   //   to: "/contact",
